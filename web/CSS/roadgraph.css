@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+#roadgraph svg {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.7);
+	background-image: linear-gradient(45deg, rgba(85, 85, 85, 0.3) 25%, transparent 25%, transparent),
+					  linear-gradient(-45deg, rgba(85, 85, 85, 0.3) 25%, transparent 25%, transparent),
+					  linear-gradient(45deg, transparent 75%, rgba(85, 85, 85, 0.3) 75%),
+					  linear-gradient(-45deg, transparent 75%, rgba(85, 85, 85, 0.3) 75%);
+	background-size: 3px 3px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 3px rgba(142, 63, 25, 0.7);
+	box-sizing: border-box;
+	z-index: 1;
+}
+#roadgraph .line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+#roadgraph svg:active {
+	cursor: move;
+}

@@ -1,0 +1,242 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+	font-family: FZJZJW;
+	src: url(../Font/FZJZJW.TTF);
+}
+* {
+	font-family: "Microsoft YaHei", "微软雅黑", "Calibri";
+}
+body {
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	overflow: hidden;
+}
+html, body, #container {
+	height: 100%;
+	width: 100%;
+}
+#main {
+	position: absolute;
+	left: 420px;
+	top: 10px;
+	border: 3px solid #EEEEEE;
+	z-index: 2;
+}
+
+#searchBox {
+	background-color: #FFFFFF;
+	line-height: 20px;
+	float: left;
+}
+#choosetype{
+	float: left;
+}
+div.OAggregate{
+	width:125px;
+	 height:30px;
+	 cursor:pointer;
+	 background:#66c2a5; 
+	 margin-left: 8px;
+	 text-align:center;
+	 line-height:30px;
+	 display:none;
+	 
+}
+div.DAggregate{
+	width:125px;
+	 height:30px;
+	 cursor:pointer;
+	 background:#8da0cb;
+	 margin-left: 8px;
+	 text-align:center;
+	 line-height:30px;
+	 display:none;
+	 
+	
+}
+
+
+#searchBox input {
+	font-size: 22px;
+	border: 1px solid #AAAAAA;
+	border-radius: 5px;
+	width: 350px;
+	height: 30px;
+}
+#main button {
+	cursor: pointer;
+	font-size: 22px;
+	text-align: center;
+	line-height: 30px;
+	color: #FFFFFF;
+	border: 1px solid #CDCDCD;
+	border-radius: 5px;
+	margin-left: 8px;
+}
+#Aggregate{
+	background-color: #fbb3ad;
+}
+#getO {
+	background-color: #b2cce2
+}
+#brushO{
+	background-color:#ccebc5;
+}
+
+#brushD{
+	background-color:#decbe4;
+}
+#timeline{
+	background-color: #fed9a5;
+}
+#clearbtn{
+	background-color: #ffff49;
+}
+
+
+#mydatatimepicker {
+	background-color: #CDCDCD;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 400px;
+	border: 3px solid #EEEEEE;
+	border-radius: 15px;
+	z-index: 2;
+//	visibility: hidden;
+}
+#mydatatimepickertable {
+	margin-top: 10px;
+	margin-bottom: 10px;
+//	visibility: hidden;
+}
+#pickertext {
+	font-family: "FZJZJW";
+	font-size: 28px;
+	color: #159b0d;
+	text-shadow: 3px 3px 3px #FFFFFF;
+}
+#pickerlabel {
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+#loading {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	border-radius: 150px;
+	z-index: 1;
+}
+
+canvas {
+	z-index: 10 !important;
+}
+#red.pointO.selected {
+   
+   fill:orange;
+    }
+#blue.pointD.selected
+{
+    stroke-width: 1.0;
+    fill:black;
+    }
+/****************************Timeline*************************************/    
+ #areaChartBox {
+      position: absolute;
+        bottom:38px;
+        right:15px;
+        left:15px;
+ 		display:none;
+        width:1080px;
+        height:300px;
+      	 z-index:1;
+ }
+ 
+.areaChartSvg {
+  font: 10px sans-serif;
+}
+
+.line {
+  stroke-width: 1;
+  fill: none;
+  clip-path: url(#clip);
+}
+
+.area {
+  clip-path: url(#clip);
+  stroke-width: 0;
+  opacity: 0.7;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+/* Statistic lines */
+
+.meanline {
+  stroke: blue;
+  fill: none;
+  stroke-width: 2;
+  clip-path: url(#clip);
+}
+
+.meanline-label {
+  fill: blue;
+  stroke-width: 1;
+  font-size: 14px;
+}
+
+.sdline {
+  stroke: red;
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 10,10;
+  clip-path: url(#clip);
+}
+
+.sdline-label {
+  fill: red;
+  stroke-width: 1;
+  font-size: 14px;
+}
+
+.label {
+  fill: black;
+  stroke-width: 1;
+  font-size: 14px;
+}
+/****************************Timeline end*************************************/ 
+.pointDfromO.selected
+{
+    //stroke-width: 1.0;
+    fill:#ffff49;
+    }
+    
+.tooltip{
+	 font-family: simsun;
+	 font-size: 14px;
+	 width: 120;
+	 height: auto;
+	 position: absolute;
+	 text-align: center;
+     border-style: solid; 
+	 border-width: 1px;
+	 background-color: white;
+	 border-radius: 5px;
+	  z-index:1;
+	 
+  }

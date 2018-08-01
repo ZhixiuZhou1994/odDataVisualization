@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+#speedpixel svg {
+	position: absolute;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 3px rgba(142, 63, 25, 0.7);
+	box-sizing: border-box;
+	z-index: 1;
+}
+#speedpixel svg:active {
+	cursor: move;
+}
+#wayLabel {
+	font-size: 14px;
+	font-family: "微软雅黑", "Consolas";
+	fill: #111111;
+}
+#closeLabel,
+#speedmap {
+	font-size: 10px;
+    font-family: "Consolas";
+    fill: #222222;
+}
+.timeLabel,
+.dayLabel {
+    font-size: 12px;
+    font-family: "Consolas";
+    fill: #222222;
+ }
+.inner {
+	fill: #F4F4F4;
+	stroke: #666666;
+}

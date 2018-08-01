@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+	<meta charset="UTF-8" />
+	<title>基于透镜的交通数据可视化</title>
+	<link rel="stylesheet" href="CSSLibrary/kalendae.css" />
+	<link rel="stylesheet" href="CSS/index.css" />
+	<link rel="stylesheet" href="CSS/roadgraph.css" />
+	<link rel="stylesheet" href="CSS/speedpixel.css" />
+	<script type="text/javascript" src="JSLibrary/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="JSLibrary/d3-3.5.10.min.js" ></script>
+
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=fb6bdd0d4756cf47f451104b5cf11a43"></script>
+	<script type="text/javascript" src="JSLibrary/kalendae.standalone.js"></script>
+	<script defer type="text/javascript" src="JS/map.js"></script>
+	<script defer type="text/javascript" src="JS/index.js"></script>
+	<script defer type="text/javascript" src="JS/indexpicker.js"></script>
+	<script defer type="text/javascript" src="JS/GetOpoint.js"></script>
+	<script defer type="text/javascript" src="JS/GetDpoint.js"></script>
+	<script defer type="text/javascript" src="JS/d3lensbrush.js"></script>
+	<script defer type="text/javascript" src="JS/lensO.js"></script>
+	<script defer type="text/javascript" src="JS/lensD.js"></script>
+	<script defer type="text/javascript" src="JS/aggregate.js"></script>
+	<script defer type="text/javascript" src="JS/DrawTimeline.js"></script>
+
+</head>
+<body>
+<div id="main">
+	<div id="searchBox">
+		<input type="text" id="keyword" name="keyword" value="" />
+		<div id="searchresult" name="searchresult"></div>
+	</div>
+
+	<div id="choosetype" onmouseover="showchoose()" onmouseout="hidechoose()">
+		<button id="Aggregate" >Aggregate</button>
+		<div class="OAggregate" onclick="GetAllOJH()">OAggregate</div>
+		<div class="DAggregate" onclick="GetAllDJH()">DAggregate</div>
+	</div>
+
+	<button id="getO" onClick="GetOpoint()">OData</button>
+	<button id="brushO" onClick="DrawOLens()">LensO</button>
+	<button id="brushD" onClick="DrawDLens()">LensD</button>
+	<button id="timeline"  onClick="SetTimeline()"> TimeLine</button>
+	<button id="clearbtn" onClick="clearbtn('all')">Clear</button>
+
+</div>
+<div id="mydatatimepicker">
+	<table id="mydatatimepickertable" cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td colspan="2" align="center" id="pickertext">日&nbsp;期&nbsp;选&nbsp;择</td>
+		</tr>
+		<tr>
+			<td align="center" id="pickerlabel0"></td>
+			<td align="center" id="pickerlabel1"></td>
+		</tr>
+		<tr>
+			<td align="center" id="datepicker0"></td>
+			<td align="center" id="datepicker1"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" id="pickertext">时&nbsp;间&nbsp;选&nbsp;择</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<select id="hourstart"></select>时
+				<select id="minutestart"></select>分
+			</td>
+			<td align="center">
+				<select id="hourend"></select>时
+				<select id="minuteend"></select>分
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="container"></div>
+<div id="areaChartBox"></div>
+<img src="Images/loading.gif" id="loading" />
+
+</body>
+</html>
